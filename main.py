@@ -37,8 +37,9 @@ def blackJack():
         elif playerTotal < dealerTotal:
             endOfGame(loss=True, playerTotal=playerTotal)
         elif playerTotal == dealerTotal:
-            endOfGame(None, playerTotal=playerTotal)
-
+            endOfGame(None, playerTotal=playerTotal)        
+    
+    
     for i in range(0, 2):
         dealerCardPick = random.choice(cards)
         playerCardPick = random.choice(cards)
@@ -73,7 +74,7 @@ def blackJack():
             #come back to figureout
 
         elif hitAgain == 'n':    
-            if dealerTotal < 17:
+            while dealerTotal < 17:
                 dealerPickAgain = random.choice(cards)
                 dealer.append(dealerPickAgain)
                 dealerTotal += dealerPickAgain
